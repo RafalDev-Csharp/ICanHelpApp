@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Entities.Ratings
 {
-    public class Rating
+    public abstract class Rating
     {
         public Id Id { get; set; }
         public Id AnnouncementId { get; set; }

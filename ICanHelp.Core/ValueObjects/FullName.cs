@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICanHelp.Core.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace ICanHelp.Core.ValueObjects
         {
             if (string.IsNullOrWhiteSpace(value) || value.Length is > 100 or < 3)
             {
-                //throw new InvalidFullNameException(value);
+                throw new InvalidFullNameException(value);
             }
 
             Value = value;

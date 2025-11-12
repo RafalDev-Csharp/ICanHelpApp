@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICanHelp.Core.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace ICanHelp.Core.ValueObjects
         {
             if (string.IsNullOrWhiteSpace(value) || value.Length is > 200 or < 6)
             {
-                //throw new InvalidPasswordException();
+                throw new InvalidPasswordException();
             }
 
             Value = value;

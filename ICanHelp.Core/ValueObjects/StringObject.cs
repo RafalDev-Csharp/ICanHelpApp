@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICanHelp.Core.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
@@ -14,7 +15,7 @@ namespace ICanHelp.Core.ValueObjects
         {
             if (string.IsNullOrWhiteSpace(value) || value.Length is > 100 or < 1)
             {
-                //throw new InvalidCustomNameException(value);
+                throw new InvalidStringObjectException(value);
             }
 
             Value = value;

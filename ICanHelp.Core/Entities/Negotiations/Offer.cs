@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Entities.Negotiations
 {
-    public class Offer
+    public abstract class Offer
     {
         public Id Id { get; set; }
         public Id AnnouncementId { get; set; }  

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Entities.Users
 {
-    public class HelperUser : User
+    public sealed class HelperUser : User
     {
         public HelperRating HelperRating { get; set; }
         

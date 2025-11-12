@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICanHelp.Core.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +17,17 @@ namespace ICanHelp.Core.ValueObjects
         {
             if (string.IsNullOrWhiteSpace(value))
             {
-                //throw new InvalidPhoneNumberException(value);
+                throw new InvalidPhoneNumberException(value);
             }
 
             if (value.Length is > 25 or < 6)
             {
-                //throw new InvalidPhoneNumberException(value);
+                throw new InvalidPhoneNumberException(value);
             }
 
             if (!Regex.IsMatch(value))
             {
-                //throw new InvalidPhoneNumberException(value);
+                throw new InvalidPhoneNumberException(value);
             }
 
             Value = value;

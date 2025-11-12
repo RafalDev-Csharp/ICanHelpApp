@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Entities.Offers
 {
-    public class User
+    public abstract class User
     {
         public UserId Id { get; private set; }
         public UserName UserName { get; private set; }

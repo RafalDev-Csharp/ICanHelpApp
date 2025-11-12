@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Entities.Negotiations
 {
-    public class HelperOffer
+    public class HelperOffer : Offer
     {
         public CustomDateTime WantToStart { get; set; }
         public CustomDateTime WantToFinish { get; set; }

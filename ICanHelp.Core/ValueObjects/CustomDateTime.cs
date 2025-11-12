@@ -12,7 +12,7 @@ namespace ICanHelp.Core.ValueObjects
 
         public CustomDateTime(DateTime value)
         {
-            // Walidacja daty
+            // Walidacja daty. defalut DateTime.MinValue;
             if (value == default)
             {
                 throw new ArgumentException("DateTime cannot be default.", nameof(value));
