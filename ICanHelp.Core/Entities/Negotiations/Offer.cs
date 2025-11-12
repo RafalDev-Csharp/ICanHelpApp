@@ -19,11 +19,12 @@ namespace ICanHelp.Core.Entities.Negotiations
         public CustomDateTime WantToFinish { get; set; }
         public Price Price { get; set; }
         public Description Description { get; set; }
-        public bool IsAcceptedByClient { get; set; }
-        public bool IsAcceptedByHelper { get; set; }
-        public bool CreatedByHelper { get; set; }
+        public AppUserRole AcceptedBy { get; set; }
+        public AppUserRole CreatedBy { get; set; }
 
-        protected Offer(Id id, Id announcementId, UserId clientId, UserId helperId, bool isAvailable, CustomDateTime wantToStart, CustomDateTime wantToFinish, Price price, Description description, bool isAcceptedByClient, bool isAcceptedByHelper)
+        protected Offer(Id id, Id announcementId, UserId clientId, UserId helperId, bool isAvailable,
+            CustomDateTime wantToStart, CustomDateTime wantToFinish, Price price, Description description,
+            AppUserRole acceptedBy, AppUserRole createdBy)
         {
             Id = id;
             AnnouncementId = announcementId;
@@ -35,8 +36,8 @@ namespace ICanHelp.Core.Entities.Negotiations
             WantToFinish = wantToFinish;
             Price = price;
             Description = description;
-            IsAcceptedByClient = isAcceptedByClient;
-            IsAcceptedByHelper = isAcceptedByHelper;
+            AcceptedBy = acceptedBy;
+            CreatedBy = createdBy;
         }
     }
 }
