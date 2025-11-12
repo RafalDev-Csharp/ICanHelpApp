@@ -9,10 +9,12 @@ namespace ICanHelp.Core.Entities.Negotiations
 {
     public class ClientOffer : Offer
     {
-        public CustomDateTime WantToStart {  get; set; }
-        public CustomDateTime WantToFinish { get; set; }
-        public Price Price { get; set; }
-        public string Description { get; set; }
-        public bool IsAccepted { get; set; }
+        public ClientOffer(Id id, Id announcementId, UserId clientId, UserId helperId, bool isAvailable,
+            CustomDateTime wantToStart, CustomDateTime wantToFinish, Price price, Description description,
+            bool isAccepted, bool isAcceptedByClient, bool isAcceptedByHelper) 
+                : base(id, announcementId, clientId, helperId, isAvailable, wantToStart,
+                      wantToFinish, price, description, isAcceptedByHelper, isAcceptedByClient)
+        {
+        }
     }
 }

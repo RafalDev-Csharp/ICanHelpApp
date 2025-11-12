@@ -13,5 +13,13 @@ namespace ICanHelp.Core.Entities
         public StringObject FileName{ get; set; }
         public StringObject FileExtension{ get; set; }
         public StringObject FilePath{ get; set; }
+
+        public Image(Id id, StringObject fileName, StringObject fileExtension, StringObject filePath)
+        {
+            id = Id;
+            FileName = fileName;
+            FileExtension = fileExtension;
+            FilePath = filePath;
+        }
     }
 }

@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Entities
 {
-    public class Liked
+    public class AppUserRole
     {
         public Id Id { get; set; }
-        public Id AnnouncementId { get; set; }
-        public bool IsLiked { get; set; }
+        public StringObject UserRoleName { get; set; }
+
+        public AppUserRole(Id id, StringObject userRoleName)
+        {
+            Id = id;
+            UserRoleName = userRoleName;
+        }
     }
 }
