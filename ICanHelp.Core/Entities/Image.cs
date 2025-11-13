@@ -21,5 +21,12 @@ namespace ICanHelp.Core.Entities
             FileExtension = fileExtension;
             FilePath = filePath;
         }
+
+        public void UpdateImage(StringObject fileName, StringObject fileExtension, StringObject filePath)
+        {
+            FileName = fileName;
+            FileExtension = fileExtension;
+            FilePath = filePath;
+        }
     }
 }

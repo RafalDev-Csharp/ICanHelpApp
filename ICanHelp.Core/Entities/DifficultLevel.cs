@@ -17,5 +17,10 @@ namespace ICanHelp.Core.Entities
             Id = id;
             DifficultLevelName = difficultLevelName;
         }
+
+        public void UpdateDifficultLevel(StringObject difficultLevelName)
+        {
+            DifficultLevelName = difficultLevelName;
+        }
     }
 }

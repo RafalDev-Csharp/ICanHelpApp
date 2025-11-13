@@ -31,7 +31,10 @@ namespace ICanHelp.Core.Entities.Offers
         public IEnumerable<Rating> ClientRatings { get; set; }
         public IEnumerable<Rating> HelperRatings { get; set; }
 
-        public User(UserId id, UserName userName, Password password, FullName fullName, Role role, CustomDateTime createdAt, bool isLocked, Description description, ContactData contactData, IEnumerable<Announcement> announcements, IEnumerable<LikedAnnouncement> likedAnnouncements, IEnumerable<LikedUser> likedUsers, IEnumerable<Rating> clientRatings, IEnumerable<Rating> helperRatings)
+        public User(UserId id, UserName userName, Password password, FullName fullName, Role role,
+            CustomDateTime createdAt, bool isLocked, Description description, ContactData contactData,
+            IEnumerable<Announcement> announcements, IEnumerable<LikedAnnouncement> likedAnnouncements,
+            IEnumerable<LikedUser> likedUsers, IEnumerable<Rating> clientRatings, IEnumerable<Rating> helperRatings)
         {
             Id = id;
             UserName = userName;
@@ -47,6 +50,17 @@ namespace ICanHelp.Core.Entities.Offers
             LikedUsers = likedUsers;
             ClientRatings = clientRatings;
             HelperRatings = helperRatings;
+        }
+
+        public void UpdateUser(UserName userName, FullName fullName, Role role, bool isLocked,
+            Description description, ContactData contactData)
+        {
+            UserName = userName;
+            FullName = fullName;
+            Role = role;
+            IsLocked = isLocked;
+            Description = description;
+            ContactData = contactData;
         }
     }
 }

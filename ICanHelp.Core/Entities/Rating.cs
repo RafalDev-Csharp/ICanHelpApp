@@ -21,5 +21,10 @@ namespace ICanHelp.Core.Entities
             UserId = userId;
             Rate = rate;
         }
+
+        public void UpdateRate(Rate rate)
+        {
+            Rate = rate;
+        }
     }
 }

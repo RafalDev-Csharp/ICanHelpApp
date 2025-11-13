@@ -16,5 +16,11 @@ namespace ICanHelp.Core.Entities
             Latitude = latitude;
             Longitude = longitude;
         }
+
+        public void UpdateLocation(double latitude, double longitude)
+        {
+            Latitude = latitude;
+            Longitude = longitude;
+        }
     }
 }

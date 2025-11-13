@@ -11,20 +11,26 @@ namespace ICanHelp.Core.Entities
     public class Announcement
     {
         public Id Id { get; set; }
+        public Category Category { get; set; }
+        public Subcategory Subcategory { get; set; }
+        public DifficultLevel DifficultLevel { get; set; }
         public UserId OwnerId { get; set; }
         public StringObject Title { get; set; }
         public CustomDateTime CreatedAt { get; set; }
         public Location Location { get; set; }
         public Description Description { get; set; }
         public Price Price { get; set; }
+        public bool IsAvailable { get; set; }
+        public bool IsFinished { get; set; }
+
 
         public ClientOffer ClientOffer { get; set; }
         public IEnumerable<HelperOffer> HelperOffers { get; set; }
         public IEnumerable<Image> Images { get; set; }
 
         public Announcement(Id id, UserId ownerId, StringObject title, CustomDateTime createdAt,
-            Location location, Description description, Price price, ClientOffer clientOffer,
-            IEnumerable<HelperOffer> helperOffers, IEnumerable<Image> images)
+            Location location, Description description, Price price, bool isAvailable, bool isFinished,
+            ClientOffer clientOffer, IEnumerable<HelperOffer> helperOffers, IEnumerable<Image> images)
         {
             Id = id;
             OwnerId = ownerId;
@@ -33,9 +39,26 @@ namespace ICanHelp.Core.Entities
             Location = location;
             Description = description;
             Price = price;
+            IsAvailable = isAvailable;
+            IsFinished = isFinished;
             ClientOffer = clientOffer;
             HelperOffers = helperOffers;
             Images = images;
+        }
+
+        public void UpdateAnnouncement(Category category, Subcategory subcategory,
+            DifficultLevel difficultLevel, StringObject title, Location location,
+            Description description, Price price, bool isAvailable, bool isFinished)
+        {
+            Category = category;
+            Subcategory = subcategory;
+            DifficultLevel = difficultLevel;
+            Title = title;
+            Location = location;
+            Description = description;
+            Price = price;
+            IsAvailable = isAvailable;
+            IsFinished = isFinished;
         }
     }
 }

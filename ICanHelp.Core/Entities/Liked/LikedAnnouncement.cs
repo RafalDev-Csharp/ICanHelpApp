@@ -15,6 +15,11 @@ namespace ICanHelp.Core.Entities.Liked
         { 
             AnnouncementId = announcementId;
         }
+
+        public void UpdateIsAnnouncementLiked(bool isLiked)
+        {
+            IsLiked = isLiked;
+        }
     }
 
 }

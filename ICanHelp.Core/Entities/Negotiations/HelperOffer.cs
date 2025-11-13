@@ -9,12 +9,28 @@ namespace ICanHelp.Core.Entities.Negotiations
 {
     public class HelperOffer : Offer
     {
-        public HelperOffer(Id id, Id announcementId, UserId clientId, UserId helperId, bool isAvailable,
+        public Rating RateClient { get; set; }
+        public bool IsAccepted { get; set; }
+        public HelperOffer(Id id, Id announcementId, UserId clientId, UserId helperId,
             CustomDateTime wantToStart, CustomDateTime wantToFinish, Price price, Description description,
-            bool isAccepted, bool isAcceptedByClient, bool isAcceptedByHelper)
-                : base(id, announcementId, clientId, helperId, isAvailable, wantToStart,
-                      wantToFinish, price, description, isAcceptedByHelper, isAcceptedByClient)
+            bool isAccepted, AppUserRole acceptedBy, AppUserRole createdBy,
+            Rating rateClient)
+                : base(id, announcementId, clientId, helperId, wantToStart,
+                      wantToFinish, price, description, acceptedBy, createdBy)
         {
+            RateClient = rateClient;
+            IsAccepted = isAccepted;
+        }
+
+        public void UpdateHelperOffer(CustomDateTime wantToStart, CustomDateTime wantToFinish,
+            Price price, Description description, bool isAccepted, Rating rateClient)
+        {
+            WantToStart = wantToStart;
+            WantToFinish = wantToFinish;
+            Price = price;
+            Description = description;
+            IsAccepted = isAccepted;
+            RateClient = rateClient;
         }
     }
 }

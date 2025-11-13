@@ -17,5 +17,10 @@ namespace ICanHelp.Core.Entities
             Id = id;
             CategoryName = categoryName;
         }
+
+        public void UpdateCategory(StringObject categoryName)
+        {
+            CategoryName = categoryName;
+        }
     }
 }

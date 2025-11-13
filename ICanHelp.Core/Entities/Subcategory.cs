@@ -21,5 +21,11 @@ namespace ICanHelp.Core.Entities
             SubcategoryName = subcategoryName;
             CategoryId = categoryId;
         }
+
+        public void UpdateSubcategory(StringObject subcategoryName, Id categoryId)
+        {
+            SubcategoryName = subcategoryName;
+            CategoryId = categoryId;
+        }
     }
 }

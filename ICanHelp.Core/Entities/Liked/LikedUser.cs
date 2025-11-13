@@ -15,5 +15,10 @@ namespace ICanHelp.Core.Entities.Liked
         {
             UserId = userId;    
         }
+
+        public void UpdateIsUserLiked(bool isLiked)
+        {
+            IsLiked = isLiked;
+        }
     }
 }

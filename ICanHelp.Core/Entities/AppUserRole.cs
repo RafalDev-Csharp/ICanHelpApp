@@ -17,5 +17,10 @@ namespace ICanHelp.Core.Entities
             Id = id;
             UserRoleName = userRoleName;
         }
+
+        public void UpdateAppUserRole(StringObject userRoleName)
+        {
+            UserRoleName = userRoleName;
+        }
     }
 }

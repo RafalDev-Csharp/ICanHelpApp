@@ -13,7 +13,6 @@ namespace ICanHelp.Core.Entities.Negotiations
         public Id AnnouncementId { get; set; }  
         public UserId ClientId { get; set; }
         public UserId HelperId { get; set; }
-        public bool IsAvailable { get; set; }
 
         public CustomDateTime WantToStart { get; set; }
         public CustomDateTime WantToFinish { get; set; }
@@ -22,7 +21,7 @@ namespace ICanHelp.Core.Entities.Negotiations
         public AppUserRole AcceptedBy { get; set; }
         public AppUserRole CreatedBy { get; set; }
 
-        protected Offer(Id id, Id announcementId, UserId clientId, UserId helperId, bool isAvailable,
+        protected Offer(Id id, Id announcementId, UserId clientId, UserId helperId,
             CustomDateTime wantToStart, CustomDateTime wantToFinish, Price price, Description description,
             AppUserRole acceptedBy, AppUserRole createdBy)
         {
@@ -30,7 +29,6 @@ namespace ICanHelp.Core.Entities.Negotiations
             AnnouncementId = announcementId;
             ClientId = clientId;
             HelperId = helperId;
-            IsAvailable = isAvailable;
 
             WantToStart = wantToStart;
             WantToFinish = wantToFinish;

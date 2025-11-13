@@ -25,5 +25,14 @@ namespace ICanHelp.Core.Entities.Users
             City = city;
             PostalCode = postalCode;
         }
+
+        public void updateContactData(Email email, PhoneNumber phoneNumber, StringObject country, StringObject city, StringObject postalCode)
+        {
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Country = country;
+            City = city;
+            PostalCode = postalCode;
+        }
     }
 }
