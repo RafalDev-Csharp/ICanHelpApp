@@ -26,7 +26,7 @@ namespace ICanHelp.Core.Entities.Users
             PostalCode = postalCode;
         }
 
-        public void updateContactData(Email email, PhoneNumber phoneNumber, StringObject country, StringObject city, StringObject postalCode)
+        public void UpdateContactData(Email email, PhoneNumber phoneNumber, StringObject country, StringObject city, StringObject postalCode)
         {
             Email = email;
             PhoneNumber = phoneNumber;
