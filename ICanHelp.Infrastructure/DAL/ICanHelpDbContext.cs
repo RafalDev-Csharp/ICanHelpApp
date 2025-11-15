@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Infrastructure.DAL
 {
-    internal sealed class ICanHelpDbContext : DbContext
+    public sealed class ICanHelpDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<ClientOffer> ClientOffers { get; set; }

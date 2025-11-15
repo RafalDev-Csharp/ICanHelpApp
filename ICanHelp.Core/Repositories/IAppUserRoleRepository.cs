@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface IAppUserRoleRepository
+    public interface IAppUserRoleRepository : IRepository<AppUserRole>
     {
-        Task<IEnumerable<AppUserRole>> GetAllAppUserRolesAsync();
-        Task<AppUserRole?> GetAppUserRoleByIdAsync(Id appUserRoleId);
-        Task AddAppUserRoleAsync(AppUserRole appUserRole);
-        Task UpdateAppUserRoleAsync(AppUserRole appUserRole);
-        Task DeleteAppUserRoleAsync(AppUserRole appUserRole);
+        void Update(AppUserRole appUserRole);
     }
 }

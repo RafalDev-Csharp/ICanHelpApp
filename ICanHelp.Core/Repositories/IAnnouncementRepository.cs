@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface IAnnouncementRepository
+    public interface IAnnouncementRepository : IRepository<Announcement>
     {
-        Task<IEnumerable<Announcement>> GetAllAnnouncementsAsync();
-        Task<Announcement?> GetAnnouncementByIdAsync(Id announcementId);
-        Task AddAnnouncementAsync(Announcement announcement);
-        Task UpdateAnnouncementAsync(Announcement announcement);
-        Task DeleteAnnouncementAsync(Announcement announcement);
+        void Update(Announcement announcement);
     }
 }

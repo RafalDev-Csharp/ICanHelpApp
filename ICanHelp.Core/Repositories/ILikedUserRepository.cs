@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface ILikedUserRepository
+    public interface ILikedUserRepository : IRepository<LikedUser>
     {
-        Task<IEnumerable<LikedUser>> GetAllLikedUsersAsync();
-        Task<LikedUser?> GetLikedUserByIdAsync(Id likedUserId);
-        Task AddLikedUserAsync(LikedUser likedUser);
-        Task UpdateLikedUserAsync(LikedUser likedUser);
-        Task DeleteLikedUserAsync(LikedUser likedUser);
+        void Update(LikedUser likedUser);
     }
 }

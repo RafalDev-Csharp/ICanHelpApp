@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface IImagesRepository
+    public interface IImagesRepository : IRepository<Image>
     {
-        Task<IEnumerable<Image>> GetAllImagesAsync();
-        Task<Image?> GetImageByIdAsync(Id imageId);
-        Task AddImageAsync(Image image);
-        Task UpdateImageAsync(Image image);
-        Task DeleteImageAsync(Image image);
+        void Update(Image image);
     }
 }

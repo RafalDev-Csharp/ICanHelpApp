@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface IDifficultLevelRepository
+    public interface IDifficultLevelRepository : IRepository<DifficultLevel>
     {
-        Task<IEnumerable<DifficultLevel>> GetAllDifficultLevelsAsync();
-        Task<DifficultLevel?> GetDifficultLevelByIdAsync(Id difficultLevelId);
-        Task AddDifficultLevelAsync(DifficultLevel difficultLevel);
-        Task UpdateDifficultLevelAsync(DifficultLevel difficultLevel);
-        Task DeleteDifficultLevelAsync(DifficultLevel difficultLevel);
+        void Update(DifficultLevel difficultLevel);
     }
 }

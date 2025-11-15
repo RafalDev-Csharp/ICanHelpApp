@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface IRatingRepository
+    public interface IRatingRepository : IRepository<Rating>
     {
-        Task<IEnumerable<int>> GetAllRatingsAsync();
-        Task<int?> GetRatingByIdAsync(Id ratingId);
-        Task AddRatingAsync(int rating);
-        Task UpdateRatingAsync(int rating);
-        Task DeleteRatingAsync(int rating);
+        void Update(Rating rating);
     }
 }

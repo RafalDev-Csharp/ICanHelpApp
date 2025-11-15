@@ -9,16 +9,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface IContactData
+    public interface IContactData : IRepository<ContactData>
     {
-        //Task<IEnumerable<string>> GetAllContactDataAsync();
-        Task AddContactDataAsync(string contactData);
-        Task DeleteContactDataAsync(string contactData);
-
-        Task<IEnumerable<ContactData>> GetAllContactDataAsync();
-        Task<ContactData?> GetContactDataByIdAsync(Id contactData);
-        Task AddContactDataAsync(ContactData contactData);
-        Task UpdateContactDataAsync(ContactData contactData);
-        Task DeleteContactDataAsync(ContactData contactData);
+        void Update(ContactData contactData);
     }
 }

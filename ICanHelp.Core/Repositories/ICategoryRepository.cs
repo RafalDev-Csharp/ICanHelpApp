@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace ICanHelp.Core.Repositories
 {
-    public interface ICategoryRepository
+    public interface ICategoryRepository : IRepository<Category>
     {
-        Task<IEnumerable<Category>> GetAllCategoriesAsync();
-        Task<Category?> GetCategoryByIdAsync(Id categoryId);
-        Task AddCategoryAsync(Category category);
-        Task UpdateCategoryAsync(Category category);
-        Task DeleteCategoryAsync(Category category);
+        void Update(Category category);
     }
 }
