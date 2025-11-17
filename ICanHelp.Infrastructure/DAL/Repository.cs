@@ -45,7 +45,6 @@ namespace ICanHelp.Infrastructure.DAL
             }
             if (!string.IsNullOrEmpty(includeProperties))
             {
-                //Villa,VillaNumber -- case sensitive
                 foreach (var includeProp in includeProperties
                     .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {

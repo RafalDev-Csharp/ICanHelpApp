@@ -10,4 +10,8 @@
     <PackageReference Include="Scrutor" Version="6.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ICanHelp.Core\ICanHelp.Core.csproj" />
+  </ItemGroup>
+
 </Project>

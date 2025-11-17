@@ -20,10 +20,11 @@ namespace ICanHelp.Core.Entities.Negotiations
         public Description Description { get; set; }
         public AppUserRole AcceptedBy { get; set; }
         public AppUserRole CreatedBy { get; set; }
+        public bool IsAccepted { get; set; }
 
         protected Offer(Id id, Id announcementId, UserId clientId, UserId helperId,
             CustomDateTime wantToStart, CustomDateTime wantToFinish, Price price, Description description,
-            AppUserRole acceptedBy, AppUserRole createdBy)
+            bool isAccepted, AppUserRole acceptedBy, AppUserRole createdBy)
         {
             Id = id;
             AnnouncementId = announcementId;
@@ -36,6 +37,7 @@ namespace ICanHelp.Core.Entities.Negotiations
             Description = description;
             AcceptedBy = acceptedBy;
             CreatedBy = createdBy;
+            IsAccepted = isAccepted;
         }
     }
 }
