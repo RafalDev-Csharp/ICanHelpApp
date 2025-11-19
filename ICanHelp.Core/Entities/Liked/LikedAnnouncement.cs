@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities.Users;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,9 @@ namespace ICanHelp.Core.Entities.Liked
         public Id AnnouncementId { get; set; }      
         public Announcement Announcement { get; set; }
 
-        public LikedAnnouncement(Id id, Id announcementId, bool isLiked) : base(id, isLiked)
-        { 
+        public LikedAnnouncement(Id id, bool isLiked, UserId userLikerId, User userLiker, Id announcementId, Announcement announcement) : base(id, isLiked, userLikerId, userLiker)
+        {
+            AnnouncementId = announcementId;
             AnnouncementId = announcementId;
         }
 

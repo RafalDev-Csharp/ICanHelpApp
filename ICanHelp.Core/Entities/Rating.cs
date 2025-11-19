@@ -19,11 +19,12 @@ namespace ICanHelp.Core.Entities
         public User RatedUser { get; set; }
         public Rate Rate { get; set; }
 
-        protected Rating(Id id, Id announcementId, UserId userId, Rate rate)
+        protected Rating(Id id, Id announcementId, UserId userId, UserId ratedUserId, Rate rate)
         {
             Id = id;
             AnnouncementId = announcementId;
             UserId = userId;
+            RatedUserId = ratedUserId;
             Rate = rate;
         }
 

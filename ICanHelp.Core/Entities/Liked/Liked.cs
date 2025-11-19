@@ -15,10 +15,12 @@ namespace ICanHelp.Core.Entities.Liked
         public UserId UserLikerId { get; set; }
         public User UserLiker { get; set; }
 
-        protected Liked(Id id, bool isLiked)
+        protected Liked(Id id, bool isLiked, UserId userLikerId, User userLiker)
         {
-            id = Id;
+            Id = id;
             IsLiked = isLiked;
+            UserLikerId = userLikerId;
+            UserLiker = userLiker;  
         }
     }
 }

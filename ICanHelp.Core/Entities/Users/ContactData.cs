@@ -18,11 +18,13 @@ namespace ICanHelp.Core.Entities.Users
         public StringObject City { get; set; }
         public StringObject PostalCode { get; set; }
 
-        public ContactData(Id id, Email email, PhoneNumber phoneNumber, StringObject country, StringObject city, StringObject postalCode)
+        public ContactData(Id id, Email email, PhoneNumber phoneNumber, User user, UserId userId, StringObject country, StringObject city, StringObject postalCode)
         {
             Id = id;
             Email = email;
             PhoneNumber = phoneNumber;
+            User = user;
+            UserId = userId;
             Country = country;
             City = city;
             PostalCode = postalCode;

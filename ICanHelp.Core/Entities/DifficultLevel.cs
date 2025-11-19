@@ -11,12 +11,13 @@ namespace ICanHelp.Core.Entities
     {
         public Id Id { get; set; }
         public StringObject DifficultLevelName { get; set; }
-        public List<Announcement> Announcements { get; set; }
+        public IEnumerable<Announcement> Announcements { get; set; }
 
-        public DifficultLevel(Id id, StringObject difficultLevelName)
+        public DifficultLevel(Id id, StringObject difficultLevelName, IEnumerable<Announcement> announcements)
         {
             Id = id;
             DifficultLevelName = difficultLevelName;
+            Announcements = announcements;
         }
 
         public void UpdateDifficultLevel(StringObject difficultLevelName)

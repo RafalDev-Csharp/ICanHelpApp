@@ -15,14 +15,14 @@ namespace ICanHelp.Infrastructure.DAL.Configurations
         {
             builder.HasKey(x => x.Id);
 
-            builder.HasOne(x => x.User)
-                .WithMany(x => x.LikedAnnouncements)
-                .HasForeignKey(x => x.UserId)
+            builder.HasOne(x => x.Announcement)
+                .WithOne(x => x.LikedAnnouncement)
+                .HasForeignKey<LikedAnnouncement>(x => x.AnnouncementId)
                 .OnDelete(DeleteBehavior.Cascade);
             builder.Property(x => x.IsLiked)
                 .IsRequired();
 
-            builder.HasOne(x => x.User)
+            builder.HasOne(x => x.UserLiker)
                 .WithMany(x => x.LikedAnnouncements)
                 .HasForeignKey(x => x.AnnouncementId)
                 .OnDelete(DeleteBehavior.Cascade);

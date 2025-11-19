@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.Entities.Negotiations;
+﻿using ICanHelp.Core.Entities.Liked;
+using ICanHelp.Core.Entities.Negotiations;
 using ICanHelp.Core.Entities.Users;
 using ICanHelp.Core.ValueObjects;
 using System;
@@ -36,11 +37,20 @@ namespace ICanHelp.Core.Entities
         public IEnumerable<Image> Images { get; set; }
         public IEnumerable<Rating> Ratings { get; set; }
 
-        public Announcement(Id id, UserId ownerId, StringObject title, CustomDateTime createdAt,
+        public LikedAnnouncement LikedAnnouncement { get; set; }
+        public Id LikedAnnouncementId { get; set; }
+
+        public Announcement(Id id, Category category, Id categoryId, Subcategory subcategory, Id subcategoryId, DifficultLevel difficultLevel, Id difficultLevelId, UserId ownerId, StringObject title, CustomDateTime createdAt,
             Location location, Description description, Price price, bool isAvailable, bool isFinished,
-            ClientOffer clientOffer, IEnumerable<HelperOffer> helperOffers, IEnumerable<Image> images)
+            ClientOffer clientOffer, IEnumerable<HelperOffer> helperOffers, IEnumerable<Image> images, IEnumerable<Rating> ratings)
         {
             Id = id;
+            Category = category;
+            CategoryId = categoryId;
+            Subcategory = subcategory;
+            SubcategoryId = subcategoryId;
+            DifficultLevel = difficultLevel;
+            DifficultLevelId = difficultLevelId;
             OwnerId = ownerId;
             Title = title;
             CreatedAt = createdAt;
@@ -52,6 +62,7 @@ namespace ICanHelp.Core.Entities
             ClientOffer = clientOffer;
             HelperOffers = helperOffers;
             Images = images;
+            Ratings = ratings;
         }
 
         public void UpdateAnnouncement(Category category, Subcategory subcategory,

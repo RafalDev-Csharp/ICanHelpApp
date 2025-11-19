@@ -13,9 +13,10 @@ namespace ICanHelp.Core.Entities.Liked
         public UserId UserLikedId { get; set; }
         public User UserLiked { get; set; }
 
-        public LikedUser(Id id, UserId userLikedId, bool isLiked) : base(id, isLiked)
+        public LikedUser(Id id, bool isLiked, UserId userLikerId, User userLiker, UserId userLikedId, User userLiked) : base(id, isLiked, userLikerId, userLiker)
         {
             UserLikedId = userLikedId;
+            UserLiked = userLiked;
         }
 
         public void UpdateIsUserLiked(bool isLiked)

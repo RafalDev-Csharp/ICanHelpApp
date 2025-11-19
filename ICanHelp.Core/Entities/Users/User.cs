@@ -38,7 +38,8 @@ namespace ICanHelp.Core.Entities.Users
         public User(UserId id, UserName userName, Password password, FullName fullName, Role role,
             CustomDateTime createdAt, bool isLocked, Description description, ContactData contactData,
             IEnumerable<Announcement> announcements, IEnumerable<LikedAnnouncement> likedAnnouncements,
-            IEnumerable<LikedUser> likedUsers, IEnumerable<Rating> clientRatings, IEnumerable<Rating> helperRatings)
+            IEnumerable<LikedUser> likedUsers, IEnumerable<Rating> clientRatings, IEnumerable<Rating> helperRatings,
+            IEnumerable<ClientOffer> clientOffers, IEnumerable<HelperOffer> helperOffers)
         {
             Id = id;
             UserName = userName;
@@ -54,6 +55,8 @@ namespace ICanHelp.Core.Entities.Users
             LikedUsers = likedUsers;
             ClientRatings = clientRatings;
             HelperRatings = helperRatings;
+            ClientOffers = clientOffers;
+            HelperOffers = helperOffers;
         }
 
         public void UpdateUser(UserName userName, FullName fullName, Role role, bool isLocked,

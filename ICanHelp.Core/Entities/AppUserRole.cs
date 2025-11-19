@@ -16,10 +16,12 @@ namespace ICanHelp.Core.Entities
         public IEnumerable<ClientOffer> ClientOffers { get; set; }
         public IEnumerable<HelperOffer> HelperOffers { get; set; }
 
-        public AppUserRole(Id id, StringObject userRoleName)
+        public AppUserRole(Id id, StringObject userRoleName, IEnumerable<ClientOffer> clientOffers, IEnumerable<HelperOffer> helperOffers)
         {
             Id = id;
             UserRoleName = userRoleName;
+            ClientOffers = clientOffers;
+            HelperOffers = helperOffers;
         }
 
         public void UpdateAppUserRole(StringObject userRoleName)
