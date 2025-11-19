@@ -14,6 +14,9 @@ namespace ICanHelp.Core.Entities
         public StringObject FileExtension{ get; set; }
         public StringObject FilePath{ get; set; }
 
+        public Announcement Announcement { get; set; }
+        public Id AnnouncementId { get; set; }
+
         public Image(Id id, StringObject fileName, StringObject fileExtension, StringObject filePath)
         {
             id = Id;

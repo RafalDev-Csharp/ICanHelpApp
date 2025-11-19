@@ -13,6 +13,7 @@ namespace ICanHelp.Core.Entities
         public StringObject SubcategoryName { get; set; }
 
         public Id CategoryId { get; set; }
+        public Category Category { get; set; }
 
 
         public Subcategory(Id id, StringObject subcategoryName, Id categoryId)

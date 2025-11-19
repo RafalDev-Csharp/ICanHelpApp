@@ -9,8 +9,9 @@ namespace ICanHelp.Core.Entities.Liked
 {
     public class LikedAnnouncement : Liked
     {
-        public Id AnnouncementId { get; set; }
-    
+        public Id AnnouncementId { get; set; }      
+        public Announcement Announcement { get; set; }
+
         public LikedAnnouncement(Id id, Id announcementId, bool isLiked) : base(id, isLiked)
         { 
             AnnouncementId = announcementId;

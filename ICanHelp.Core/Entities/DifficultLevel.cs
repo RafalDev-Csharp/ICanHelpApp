@@ -11,6 +11,7 @@ namespace ICanHelp.Core.Entities
     {
         public Id Id { get; set; }
         public StringObject DifficultLevelName { get; set; }
+        public List<Announcement> Announcements { get; set; }
 
         public DifficultLevel(Id id, StringObject difficultLevelName)
         {

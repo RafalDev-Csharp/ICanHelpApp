@@ -11,7 +11,7 @@ namespace ICanHelp.Core.ValueObjects
         {
             public double Value { get; }
 
-            private Rate(double value)
+            public Rate(double value)
             {
                 if (value < 1 || value > 5)
                     throw new ArgumentOutOfRangeException(nameof(value), "Rating must be between 1 and 5.");

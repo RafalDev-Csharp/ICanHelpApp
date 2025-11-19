@@ -1,4 +1,5 @@
 ﻿using ICanHelp.Core.Entities.Liked;
+using ICanHelp.Core.Entities.Negotiations;
 using ICanHelp.Core.Entities.Users;
 using ICanHelp.Core.ValueObjects;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ICanHelp.Core.Entities.Offers
+namespace ICanHelp.Core.Entities.Users
 {
     public class User
     {
@@ -30,6 +31,9 @@ namespace ICanHelp.Core.Entities.Offers
 
         public IEnumerable<Rating> ClientRatings { get; set; }
         public IEnumerable<Rating> HelperRatings { get; set; }
+
+        public IEnumerable<ClientOffer> ClientOffers { get; set; }
+        public IEnumerable<HelperOffer> HelperOffers { get; set; }
 
         public User(UserId id, UserName userName, Password password, FullName fullName, Role role,
             CustomDateTime createdAt, bool isLocked, Description description, ContactData contactData,

@@ -13,6 +13,9 @@ namespace ICanHelp.Core.Entities
         public double? Latitude { get; set; }         
         public double? Longitude { get; set; }
 
+        public Announcement Announcement { get; set; }
+        public Id AnnouncementId { get; set; }
+
         public Location(double latitude, double longitude)
         {
             Latitude = latitude;

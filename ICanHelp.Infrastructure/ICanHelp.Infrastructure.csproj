@@ -27,8 +27,4 @@
     <ProjectReference Include="..\ICanHelp.Core\ICanHelp.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DAL\Configurations\" />
-  </ItemGroup>
-
 </Project>

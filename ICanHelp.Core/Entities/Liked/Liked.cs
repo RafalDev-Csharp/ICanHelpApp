@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities.Users;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace ICanHelp.Core.Entities.Liked
     {
         public Id Id { get; private set; }
         public bool IsLiked { get; set; }
+        public UserId UserLikerId { get; set; }
+        public User UserLiker { get; set; }
 
         protected Liked(Id id, bool isLiked)
         {

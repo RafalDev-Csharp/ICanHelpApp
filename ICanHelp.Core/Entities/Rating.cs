@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities.Users;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,11 @@ namespace ICanHelp.Core.Entities
     {
         public Id Id { get; set; }
         public Id AnnouncementId { get; set; }
+        public Announcement Announcement { get; set; }
         public UserId UserId { get; set; }
+        public User User { get; set; }
+        public UserId RatedUserId { get; set; }
+        public User RatedUser { get; set; }
         public Rate Rate { get; set; }
 
         protected Rating(Id id, Id announcementId, UserId userId, Rate rate)

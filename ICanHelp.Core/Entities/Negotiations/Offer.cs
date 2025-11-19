@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities.Users;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,27 @@ namespace ICanHelp.Core.Entities.Negotiations
     public abstract class Offer
     {
         public Id Id { get; private set; }
+
         public Id AnnouncementId { get; set; }  
+        public Announcement Announcement { get; set; }
+
         public UserId ClientId { get; set; }
+        public User Client { get; set; }
+
         public UserId HelperId { get; set; }
+        public User Helper { get; set; }
 
         public CustomDateTime WantToStart { get; set; }
         public CustomDateTime WantToFinish { get; set; }
+
         public Price Price { get; set; }
         public Description Description { get; set; }
+
+        public Id AcceptedById { get; set; }
         public AppUserRole AcceptedBy { get; set; }
+        public Id CreatedById { get; set; }
         public AppUserRole CreatedBy { get; set; }
+
         public bool IsAccepted { get; set; }
 
         protected Offer(Id id, Id announcementId, UserId clientId, UserId helperId,

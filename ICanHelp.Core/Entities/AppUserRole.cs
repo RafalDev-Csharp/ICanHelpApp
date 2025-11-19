@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities.Negotiations;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace ICanHelp.Core.Entities
     {
         public Id Id { get; set; }
         public StringObject UserRoleName { get; set; }
+
+        public IEnumerable<ClientOffer> ClientOffers { get; set; }
+        public IEnumerable<HelperOffer> HelperOffers { get; set; }
 
         public AppUserRole(Id id, StringObject userRoleName)
         {
