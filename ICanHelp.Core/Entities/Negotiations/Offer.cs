@@ -27,9 +27,10 @@ namespace ICanHelp.Core.Entities.Negotiations
         public Price Price { get; set; }
         public Description Description { get; set; }
 
-        public Id AcceptedById { get; set; }
+        public UserId AcceptedById { get; set; }
         public AppUserRole AcceptedBy { get; set; }
-        public Id CreatedById { get; set; }
+
+        public UserId CreatedById { get; set; }
         public AppUserRole CreatedBy { get; set; }
 
         public bool IsAccepted { get; set; }

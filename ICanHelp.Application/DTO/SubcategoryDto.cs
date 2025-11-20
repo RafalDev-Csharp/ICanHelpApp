@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.ValueObjects;
+﻿using ICanHelp.Core.Entities;
+using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace ICanHelp.Application.DTO
         public string SubcategoryName { get; set; }
 
         public Guid CategoryId { get; set; }
+        public CategoryDto Category { get; set; }
     }
 }

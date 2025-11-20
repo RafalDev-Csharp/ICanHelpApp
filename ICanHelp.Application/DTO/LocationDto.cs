@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ICanHelp.Core.Entities;
+using ICanHelp.Core.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +13,8 @@ namespace ICanHelp.Application.DTO
         public Guid Id { get; set; }
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
+
+        public AnnouncementDto Announcement { get; set; }
+        public Guid AnnouncementId { get; set; }
     }
 }

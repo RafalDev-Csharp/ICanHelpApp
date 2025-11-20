@@ -11,18 +11,30 @@ namespace ICanHelp.Application.DTO
     public class HelperOfferDto
     {
         public Guid Id { get; private set; }
+
         public Guid AnnouncementId { get; set; }
+        public AnnouncementDto Announcement { get; set; }
+
         public Guid ClientId { get; set; }
+        public UserDto Client { get; set; }
+
         public Guid HelperId { get; set; }
+        public UserDto Helper { get; set; }
 
         public DateTime WantToStart { get; set; }
         public DateTime WantToFinish { get; set; }
+
         public decimal Price { get; set; }
         public string Description { get; set; }
+
+        public Guid AcceptedById { get; set; }
         public AppUserRoleDto AcceptedBy { get; set; }
+
+        public Guid CreatedById { get; set; }
         public AppUserRoleDto CreatedBy { get; set; }
 
-        public RatingDto RateHelper { get; set; }
         public bool IsAccepted { get; set; }
+
+        public RatingDto RateClient { get; set; }
     }
 }

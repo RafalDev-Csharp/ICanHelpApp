@@ -16,7 +16,8 @@ namespace ICanHelp.Core.Entities.Users
         public UserName UserName { get; private set; }
         public Password Password { get; private set; }
         public FullName FullName { get; private set; }
-        public Role Role { get; private set; }
+        public AppUserRole Role { get; private set; }
+        public Id AppUserRoleId { get; private set; }
         public CustomDateTime CreatedAt { get; private set; }
         public bool IsLocked { get; private set; }
         
@@ -35,7 +36,7 @@ namespace ICanHelp.Core.Entities.Users
         public IEnumerable<ClientOffer> ClientOffers { get; set; }
         public IEnumerable<HelperOffer> HelperOffers { get; set; }
 
-        public User(UserId id, UserName userName, Password password, FullName fullName, Role role,
+        public User(UserId id, UserName userName, Password password, FullName fullName, AppUserRole role, Id appUserRoleId,
             CustomDateTime createdAt, bool isLocked, Description description, ContactData contactData,
             IEnumerable<Announcement> announcements, IEnumerable<LikedAnnouncement> likedAnnouncements,
             IEnumerable<LikedUser> likedUsers, IEnumerable<Rating> clientRatings, IEnumerable<Rating> helperRatings,
@@ -46,6 +47,7 @@ namespace ICanHelp.Core.Entities.Users
             Password = password;
             FullName = fullName;
             Role = role;
+            AppUserRoleId = appUserRoleId;
             CreatedAt = createdAt;
             IsLocked = isLocked;
             Description = description;
@@ -59,12 +61,13 @@ namespace ICanHelp.Core.Entities.Users
             HelperOffers = helperOffers;
         }
 
-        public void UpdateUser(UserName userName, FullName fullName, Role role, bool isLocked,
+        public void UpdateUser(UserName userName, FullName fullName, AppUserRole role, Id appUserRoleId, bool isLocked,
             Description description, ContactData contactData)
         {
             UserName = userName;
             FullName = fullName;
             Role = role;
+            AppUserRoleId = appUserRoleId;
             IsLocked = isLocked;
             Description = description;
             ContactData = contactData;

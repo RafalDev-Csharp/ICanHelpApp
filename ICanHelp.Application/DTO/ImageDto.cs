@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ICanHelp.Core.Entities;
+using ICanHelp.Core.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +14,8 @@ namespace ICanHelp.Application.DTO
         public string FileName { get; set; }
         public string FileExtension { get; set; }
         public string FilePath { get; set; }
+
+        public AnnouncementDto Announcement { get; set; }
+        public Guid AnnouncementId { get; set; }
     }
 }

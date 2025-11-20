@@ -1,7 +1,6 @@
 ﻿using ICanHelp.Core.Entities;
 using ICanHelp.Core.Entities.Liked;
 using ICanHelp.Core.Entities.Negotiations;
-using ICanHelp.Core.Entities.Offers;
 using ICanHelp.Core.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using System;

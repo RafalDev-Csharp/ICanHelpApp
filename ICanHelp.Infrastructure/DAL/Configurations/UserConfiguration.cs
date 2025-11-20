@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.Entities.Negotiations;
+﻿using ICanHelp.Core.Entities;
+using ICanHelp.Core.Entities.Negotiations;
 using ICanHelp.Core.Entities.Users;
 using ICanHelp.Core.ValueObjects;
 using Microsoft.EntityFrameworkCore;
@@ -27,10 +28,12 @@ namespace ICanHelp.Infrastructure.DAL.Configurations
             .HasMaxLength(200);
             builder.Property(x => x.FullName)
                 .HasConversion(x => x.Value, x => new FullName(x));
-            builder.Property(x => x.Role)
-                .HasConversion(x => x.Value, x => new Role(x))
-                .IsRequired()
-                .HasMaxLength(50);
+            builder.HasOne(x => x.Role)
+                .WithOne(x => x.User)
+                .HasForeignKey<AppUserRole>(x => x.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
             builder.Property(x => x.CreatedAt)
                 .HasConversion(x => x.Value, x => new CustomDateTime(x));
             builder.Property(x => x.IsLocked)
@@ -46,14 +49,16 @@ namespace ICanHelp.Infrastructure.DAL.Configurations
                 .WithOne(x => x.User)
                 .HasForeignKey(x => x.OwnerId)
                 .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasMany(x => x.LikedAnnouncements)
-                .WithOne(x => x.User)
-                .HasForeignKey(x => x.UserId)
+                .WithOne(x => x.UserLiker)
+                .HasForeignKey(x => x.UserLikerId)
                 .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(x => x.LikedUsers)
-                .WithOne(x => x.User)
-                .HasForeignKey(x => x.UserId)
+                .WithOne(x => x.UserLiker)
+                .HasForeignKey(x => x.UserLikedId)
                 .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasMany(x => x.ClientRatings)
                 .WithOne(x => x.User)
                 .HasForeignKey(x => x.UserId)

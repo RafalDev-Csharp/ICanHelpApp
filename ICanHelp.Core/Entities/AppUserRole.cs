@@ -1,4 +1,5 @@
 ﻿using ICanHelp.Core.Entities.Negotiations;
+using ICanHelp.Core.Entities.Users;
 using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,9 @@ namespace ICanHelp.Core.Entities
     {
         public Id Id { get; set; }
         public StringObject UserRoleName { get; set; }
+
+        public UserId UserId { get; set; }
+        public User User { get; set; }
 
         public IEnumerable<ClientOffer> ClientOffers { get; set; }
         public IEnumerable<HelperOffer> HelperOffers { get; set; }

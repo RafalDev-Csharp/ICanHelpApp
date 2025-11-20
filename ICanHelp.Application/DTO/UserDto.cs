@@ -1,5 +1,6 @@
 ﻿using ICanHelp.Core.Entities;
 using ICanHelp.Core.Entities.Liked;
+using ICanHelp.Core.Entities.Negotiations;
 using ICanHelp.Core.Entities.Users;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace ICanHelp.Application.DTO
         public string UserName { get; set; }
         public string FullName { get; set; }
         public AppUserRoleDto Role { get; set; }
+        public Guid AppUserRoleId { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool IsLocked { get; set; }
 
@@ -29,5 +31,8 @@ namespace ICanHelp.Application.DTO
 
         public IEnumerable<RatingDto> ClientRatings { get; set; }
         public IEnumerable<RatingDto> HelperRatings { get; set; }
+
+        public IEnumerable<ClientOfferDto> ClientOffers { get; set; }
+        public IEnumerable<HelperOfferDto> HelperOffers { get; set; }
     }
 }
