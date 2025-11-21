@@ -13,16 +13,19 @@ namespace ICanHelp.Core.Entities.Users
     public class User
     {
         public UserId Id { get; private set; }
+
         public UserName UserName { get; private set; }
         public Password Password { get; private set; }
         public FullName FullName { get; private set; }
+
         public AppUserRole Role { get; private set; }
         public Id AppUserRoleId { get; private set; }
+
         public CustomDateTime CreatedAt { get; private set; }
-        public bool IsLocked { get; private set; }
-        
+        public bool IsLocked { get; private set; }        
         public Description Description { get; private set; }
 
+        public Id ContactDataId { get; set; }
         public ContactData ContactData { get; private set; }
 
         public IEnumerable<Announcement> Announcements { get; set; }
@@ -35,6 +38,8 @@ namespace ICanHelp.Core.Entities.Users
 
         public IEnumerable<ClientOffer> ClientOffers { get; set; }
         public IEnumerable<HelperOffer> HelperOffers { get; set; }
+
+
 
         public User(UserId id, UserName userName, Password password, FullName fullName, AppUserRole role, Id appUserRoleId,
             CustomDateTime createdAt, bool isLocked, Description description, ContactData contactData,

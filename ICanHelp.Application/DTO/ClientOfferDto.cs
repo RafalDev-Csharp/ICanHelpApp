@@ -11,7 +11,7 @@ namespace ICanHelp.Application.DTO
 {
     public class ClientOfferDto
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public Guid AnnouncementId { get; set; }
         public AnnouncementDto Announcement { get; set; }
@@ -24,6 +24,7 @@ namespace ICanHelp.Application.DTO
 
         public DateTime WantToStart { get; set; }
         public DateTime WantToFinish { get; set; }
+
         public decimal Price { get; set; }
         public string Description { get; set; }
 
@@ -35,6 +36,7 @@ namespace ICanHelp.Application.DTO
 
         public bool IsAccepted { get; set; }
 
-        public RatingDto RateHelper { get; set; }
+        public Guid RatingHelperId { get; set; }
+        public RatingDto RatingHelper { get; set; }
     }
 }

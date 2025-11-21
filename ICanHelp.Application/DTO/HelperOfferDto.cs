@@ -10,7 +10,7 @@ namespace ICanHelp.Application.DTO
 {
     public class HelperOfferDto
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public Guid AnnouncementId { get; set; }
         public AnnouncementDto Announcement { get; set; }
@@ -35,6 +35,7 @@ namespace ICanHelp.Application.DTO
 
         public bool IsAccepted { get; set; }
 
-        public RatingDto RateClient { get; set; }
+        public Guid RatingClientId { get; set; }
+        public RatingDto RatingClient { get; set; }
     }
 }

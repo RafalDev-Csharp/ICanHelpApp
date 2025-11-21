@@ -38,8 +38,8 @@ namespace ICanHelp.Core.Entities
         public bool IsFinished { get; set; }
 
 
-        public ClientOffer ClientOffer { get; set; }
         public Id ClientOfferId { get; set; }
+        public ClientOffer ClientOffer { get; set; }
 
         public IEnumerable<HelperOffer> HelperOffers { get; set; }
 
@@ -48,6 +48,8 @@ namespace ICanHelp.Core.Entities
 
         public Id LikedAnnouncementId { get; set; }
         public LikedAnnouncement LikedAnnouncement { get; set; }
+
+
 
         public Announcement(Id id, Category category, Id categoryId, Subcategory subcategory, Id subcategoryId, DifficultLevel difficultLevel, Id difficultLevelId, UserId ownerId, StringObject title, CustomDateTime createdAt,
             Location location, Description description, Price price, bool isAvailable, bool isFinished,

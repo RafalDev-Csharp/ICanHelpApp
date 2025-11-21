@@ -1,4 +1,5 @@
-﻿using ICanHelp.Core.Entities.Users;
+﻿using ICanHelp.Core.Entities.Negotiations;
+using ICanHelp.Core.Entities.Users;
 using ICanHelp.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,35 @@ namespace ICanHelp.Core.Entities
     public class Rating
     {
         public Id Id { get; set; }
+
         public Id AnnouncementId { get; set; }
         public Announcement Announcement { get; set; }
-        public UserId UserId { get; set; }
-        public User User { get; set; }
-        public UserId RatedUserId { get; set; }
-        public User RatedUser { get; set; }
+
+        public UserId RateeId { get; set; }
+        public User Ratee { get; set; }
+
+        public UserId RaterId { get; set; }
+        public User Rater { get; set; }
+
         public Rate Rate { get; set; }
 
-        protected Rating(Id id, Id announcementId, UserId userId, UserId ratedUserId, Rate rate)
+        public Id ClientOfferId { get; set; }
+        public ClientOffer ClientOffer { get; set; }
+
+        public Id HelperOfferId { get; set; }
+        public HelperOffer HelperOffer { get; set; }
+
+
+
+        protected Rating(Id id, Id announcementId, UserId rateeId, UserId raterId, Rate rate, Id clientOfferId, Id helperOfferId)
         {
             Id = id;
             AnnouncementId = announcementId;
-            UserId = userId;
-            RatedUserId = ratedUserId;
+            RaterId = raterId;
+            RateeId = rateeId;
             Rate = rate;
+            ClientOfferId = clientOfferId;
+            HelperOfferId = helperOfferId;
         }
 
         public void UpdateRate(Rate rate)

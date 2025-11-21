@@ -10,11 +10,14 @@ namespace ICanHelp.Core.Entities
     public class Location
     {
         public Id Id { get; set; }
+
         public double? Latitude { get; set; }         
         public double? Longitude { get; set; }
 
-        public Announcement Announcement { get; set; }
         public Id AnnouncementId { get; set; }
+        public Announcement Announcement { get; set; }
+
+
 
         public Location(double latitude, double longitude)
         {

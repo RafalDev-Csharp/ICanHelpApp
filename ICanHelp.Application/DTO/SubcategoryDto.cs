@@ -11,6 +11,7 @@ namespace ICanHelp.Application.DTO
     public class SubcategoryDto
     {
         public Guid Id { get; set; }
+
         public string SubcategoryName { get; set; }
 
         public Guid CategoryId { get; set; }

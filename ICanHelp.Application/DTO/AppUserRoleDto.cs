@@ -12,6 +12,7 @@ namespace ICanHelp.Application.DTO
     public class AppUserRoleDto
     {
         public Guid Id { get; set; }
+
         public string UserRoleName { get; set; }
 
         public Guid UserId { get; set; }

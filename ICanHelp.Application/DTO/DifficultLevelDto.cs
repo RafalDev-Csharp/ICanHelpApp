@@ -10,6 +10,7 @@ namespace ICanHelp.Application.DTO
     public class DifficultLevelDto
     {
         public Guid Id { get; set; }
+
         public string DifficultLevelName { get; set; }
 
         public IEnumerable<AnnouncementDto> Announcements { get; set; }

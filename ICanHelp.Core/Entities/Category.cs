@@ -10,6 +10,7 @@ namespace ICanHelp.Core.Entities
     public class Category
     {
         public Id Id { get; set; }
+
         public StringObject CategoryName { get; set; }
 
         public IEnumerable<Announcement> Announcements { get; set; }

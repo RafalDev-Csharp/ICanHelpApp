@@ -11,7 +11,9 @@ namespace ICanHelp.Core.Entities.Liked
     public abstract class Liked
     {
         public Id Id { get; private set; }
+
         public bool IsLiked { get; set; }
+
         public UserId UserLikerId { get; set; }
         public User UserLiker { get; set; }
 

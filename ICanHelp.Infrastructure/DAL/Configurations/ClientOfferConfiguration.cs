@@ -1,5 +1,6 @@
 ﻿using ICanHelp.Core.Entities;
 using ICanHelp.Core.Entities.Negotiations;
+using ICanHelp.Core.Entities.Users;
 using ICanHelp.Core.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -60,6 +61,11 @@ namespace ICanHelp.Infrastructure.DAL.Configurations
             //       .WithMany(x => x.HelperOffers)
             //       .HasForeignKey(x => x.AcceptedById)
             //       .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(x => x.RatingHelper)
+                   .WithOne(r => r.ClientOffer)
+                   .HasForeignKey<ClientOffer>(x => x.RatingHelperId)
+                   .OnDelete(DeleteBehavior.SetNull);
 
             builder.Property(x => x.IsAccepted)
             .IsRequired();

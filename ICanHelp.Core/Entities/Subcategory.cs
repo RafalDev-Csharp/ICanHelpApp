@@ -10,6 +10,7 @@ namespace ICanHelp.Core.Entities
     public class Subcategory
     {
         public Id Id { get; set; }
+
         public StringObject SubcategoryName { get; set; }
 
         public Id CategoryId { get; set; }

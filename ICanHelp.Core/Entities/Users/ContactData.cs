@@ -11,8 +11,10 @@ namespace ICanHelp.Core.Entities.Users
     {
         public Id Id { get; private set; }
         public Email Email { get; set; }
+
         public User User { get; set; }
         public UserId UserId { get; set; }
+
         public PhoneNumber PhoneNumber { get; set; }
         public StringObject Country { get; set; }
         public StringObject City { get; set; }

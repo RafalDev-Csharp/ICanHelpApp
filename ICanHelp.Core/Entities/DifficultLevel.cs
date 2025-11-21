@@ -10,6 +10,7 @@ namespace ICanHelp.Core.Entities
     public class DifficultLevel
     {
         public Id Id { get; set; }
+
         public StringObject DifficultLevelName { get; set; }
         public IEnumerable<Announcement> Announcements { get; set; }
 

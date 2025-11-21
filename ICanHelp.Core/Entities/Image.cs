@@ -10,6 +10,7 @@ namespace ICanHelp.Core.Entities
     public class Image
     {
         public Id Id { get; set; }
+
         public StringObject FileName{ get; set; }
         public StringObject FileExtension{ get; set; }
         public StringObject FilePath{ get; set; }

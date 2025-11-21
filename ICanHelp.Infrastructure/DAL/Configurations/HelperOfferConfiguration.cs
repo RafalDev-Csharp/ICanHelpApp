@@ -60,6 +60,11 @@ namespace ICanHelp.Infrastructure.DAL.Configurations
                    .HasForeignKey(x => x.AcceptedById)
                    .OnDelete(DeleteBehavior.Restrict);
 
+            builder.HasOne(x => x.RatingClient)
+                   .WithOne(r => r.HelperOffer)
+                   .HasForeignKey<HelperOffer>(x => x.RatingClientId)
+                   .OnDelete(DeleteBehavior.SetNull);
+
             builder.Property(x => x.IsAccepted)
             .IsRequired();
 

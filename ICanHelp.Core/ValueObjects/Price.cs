@@ -49,6 +49,8 @@ namespace ICanHelp.Core.ValueObjects
             }
 
             public override string ToString() => $"{Amount:0.00} {Currency}";
-        }
+        public static implicit operator decimal(Price value) => value.Amount;
+        public static implicit operator Price(decimal value) => new(value);
+    }
 
 }

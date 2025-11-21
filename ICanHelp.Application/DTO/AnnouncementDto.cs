@@ -38,9 +38,11 @@ namespace ICanHelp.Application.DTO
         public bool IsAvailable { get; set; }
         public bool IsFinished { get; set; }
 
-
+        public Guid ClientOfferId { get; set; }
         public ClientOfferDto ClientOffer { get; set; }
+
         public IEnumerable<HelperOfferDto> HelperOffers { get; set; }
+
         public IEnumerable<ImageDto> Images { get; set; }
         public IEnumerable<RatingDto> Ratings { get; set; }
 
